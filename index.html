@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Website Sederhana — Portfolio & Produk</title>
+  <meta name="description" content="Contoh website statis HTML, CSS, JS — responsive dan siap di-host ke GitHub Pages." />
+
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#9ca3af;--soft:#111827}
+    *{box-sizing:border-box}
+    body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;line-height:1.5;margin:0;background:linear-gradient(180deg,#071029 0%, #06101a 100%);color:#e6eef6}
+    .container{max-width:1000px;margin:32px auto;padding:0 16px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    nav a:hover{color:#fff}
+
+    .hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;padding:32px 0}
+    .hero h1{font-size:28px;margin:0}
+    .hero p{color:var(--muted);margin:8px 0 0}
+    .btn{display:inline-block;margin-top:12px;padding:10px 16px;border-radius:8px;background:var(--accent);color:#04262a;text-decoration:none;font-weight:600}
+
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+    .card{background:rgba(255,255,255,0.03);padding:16px;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    .muted{color:var(--muted);font-size:14px}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}
+    .gallery img{width:100%;height:160px;object-fit:cover;border-radius:10px}
+
+    form{display:grid;gap:10px}
+    input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    input::placeholder,textarea::placeholder{color:var(--muted)}
+
+    footer{text-align:center;color:var(--muted);margin:40px 0}
+
+    @media (max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:600px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.gallery{grid-template-columns:1fr}.logo{width:40px;height:40px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">W</div>
+        <div>
+          <div style="font-weight:700">MySimpleSite</div>
+          <div class="muted" style="font-size:12px">Website statis • HTML + CSS + JS</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#features">Fitur</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>Website HTML sederhana — siap pakai</h1>
+          <p>Buat portfolio, landing page, atau website kecil dengan cepat. Edit teks, gambar, dan warna sesuai kebutuhanmu.</p>
+          <a class="btn" href="#contact">Hubungi Saya</a>
+        </div>
+        <div class="card">
+          <div style="font-weight:700">Ringkasan</div>
+          <div class="muted" style="margin-top:8px">Template ini responsif, ringan, dan mudah di-deploy ke GitHub Pages.</div>
+
+          <div style="margin-top:12px">
+            <div class="muted">Fitur:</div>
+            <ul style="margin:6px 0 0 18px">
+              <li>Header & navigasi</li>
+              <li>Kartu fitur</li>
+              <li>Gallery</li>
+              <li>Form kontak (simulasi)</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" style="margin-top:8px">
+        <div style="font-weight:700;font-size:18px">Fitur Utama</div>
+        <div class="grid">
+          <div class="card">
+            <div style="font-weight:700">Ringan & cepat</div>
+            <div class="muted" style="margin-top:8px">Hanya HTML/CSS/JS — dioptimalkan untuk performa.</div>
+          </div>
+          <div class="card">
+            <div style="font-weight:700">Responsive</div>
+            <div class="muted" style="margin-top:8px">Tampilan rapi di HP, tablet, dan desktop.</div>
+          </div>
+          <div class="card">
+            <div style="font-weight:700">Mudah dikustom</div>
+            <div class="muted" style="margin-top:8px">Ganti teks, warna, dan gambar dengan cepat.</div>
+          </div>
+        </div>
+
+        <div id="gallery" style="margin-top:18px">
+          <div style="font-weight:700;font-size:18px">Gallery</div>
+          <div class="gallery">
+            <img src="https://picsum.photos/seed/1/800/600" alt="sample1">
+            <img src="https://picsum.photos/seed/2/800/600" alt="sample2">
+            <img src="https://picsum.photos/seed/3/800/600" alt="sample3">
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:22px">
+        <div style="font-weight:700;font-size:18px">Kontak</div>
+        <div style="display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:12px">
+          <div class="card">
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Nama" required />
+              <input type="email" id="email" placeholder="Email" required />
+              <textarea id="message" rows="5" placeholder="Pesan"></textarea>
+              <button class="btn" type="submit" style="border:none;cursor:pointer">Kirim</button>
+              <div id="notice" style="margin-top:10px;color:var(--muted)"></div>
+            </form>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700">Informasi</div>
+            <div class="muted" style="margin-top:8px">Alamat kantor contoh: Jl. Contoh No.1, Jakarta</div>
+            <div class="muted" style="margin-top:6px">Tel: +62 812-3456-7890</div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© 2025 MySimpleSite • Dibuat dengan ❤️</div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      var name = document.getElementById('name').value;
+      var notice = document.getElementById('notice');
+      notice.textContent = 'Terima kasih, ' + (name || 'pengunjung') + '. Pesanmu sudah tercatat (simulasi).';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
